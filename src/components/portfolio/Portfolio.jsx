@@ -7,14 +7,14 @@ const items = [
   {
     id: 1,
     title: "Mr.Snowman",
-    img: "/mr_snowman.png",
+    img: "./mr_snowman.png",
     desc: "As part of the course at SoftServe, we created a website for an ice cream shop. Our goal was to allow users to browse a variety of ice cream flavors and easily place orders.The site enables users to view available flavors with descriptions and prices, along with a user-friendly order form. Its responsive design ensures an excellent experience on all devices.",
     url: "https://koldovsky.github.io/753-team-04/",
   },
   {
     id: 2,
     title: "Pizza Shop",
-    img: "/pizzashop.png",
+    img: "./pizzashop.png",
     desc: "A dynamic online pizza shop built with React and TypeScript. This project features a robust search input, allowing users to find pizzas by name easily. The interface displays up to four pizzas per page with seamless navigation for enhanced user experience. To improve loading times, I implemented a pizza skeleton loader that maintains page layout during data fetching. Users can sort pizzas by price, popularity, or alphabetically. Additionally, if a user attempts to access the cart without adding pizzas, a friendly reminder prompts them to explore the menu. The cart functionality also allows users to adjust the quantity of selected pizzas effortlessly. Technologies used: React, TypeScript, JavaScript, SASS, Redux Toolkit, Axios, Redux-Thunk, React Router, Redux Persist, React Icons, and React Paginate.",
     url: "https://github.com/TurkevychCode/shop",
   },
@@ -22,13 +22,13 @@ const items = [
   {
     id: 3,
     title: "Bento",
-    img: "/bentopoc.png",
+    img: "./bentopoc.png",
     desc: "I collaborated with another front-end developer to create a mobile application that generates photos and facilitates user surveys. The app features a user-friendly interface using React and Material-UI, enabling easy photo customization and survey participation. We utilized Axios for efficient API requests and React Query for real-time data management, ensuring smooth interactions. ",
   },
   {
     id: 4,
     title: "CookBookie",
-    img: "/cookbookie.jpg",
+    img: "./cookbookie.jpg",
     desc: "Recipe Book application allows users to explore a diverse collection of dishes, each with detailed recipes. Users can browse through numerous options, select their favorite dishes, and view the corresponding recipes. The app features sorting capabilities to organize dishes based on various criteria, and a search input field to quickly find specific recipes.",
     url: "https://github.com/TurkevychCode/recipe-app",
   },
