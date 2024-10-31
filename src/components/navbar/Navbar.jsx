@@ -35,7 +35,7 @@ function Navbar() {
             href="https://www.facebook.com/vitalik.turkevych.3/"
             target="_blank"
           >
-            <img src="/facebook.png" alt="facebook" />
+            <img src="/portfolio/public/facebook.png" alt="facebook" />
           </a>
         </div>
       </div>
