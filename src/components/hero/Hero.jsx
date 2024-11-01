@@ -32,9 +32,9 @@ const Hero = () => {
     }
   };
   const handleLatestWorksClick = () => {
-    const contactSection = document.getElementById("Portfolio");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
+    const latstWorksSection = document.getElementById("Portfolio");
+    if (latstWorksSection) {
+      latstWorksSection.scrollIntoView({ behavior: "smooth" });
     }
   };
   return (
