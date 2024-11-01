@@ -12,7 +12,7 @@ function App() {
   return (
     <div>
       <Cursor />
-      <section id="Homepage">
+      <section id="Home page">
         <Navbar />
         <Hero />
       </section>

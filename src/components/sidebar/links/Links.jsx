@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
-const Links = () => {
-  const items = ["Homepage", "Services", "Portfolio", "Contact", "About"];
+const Links = ({ onCloseSidebar }) => {
+  const items = ["Home page", "Services", "Portfolio", "Contact", "About"];
   const variants = {
     open: { transition: { staggerChildren: 0.1 } },
     closed: { transition: { staggeredChildren: 0.05, staggeredDirection: -1 } },
@@ -19,6 +19,7 @@ const Links = () => {
           variants={itemVariants}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
+          onClick={onCloseSidebar}
         >
           {item}
         </motion.a>

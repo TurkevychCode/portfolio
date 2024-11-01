@@ -17,6 +17,7 @@
       flex-direction: column;
       justify-content: center;
       gap: 40px;
+      padding: 20px;
 
       @include mobile {
         height: 50%;
@@ -24,6 +25,14 @@
         gap: 20px;
         align-items: center;
         text-align: center;
+      }
+      @include tablet {
+        height: 80%;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        justify-content: flex-start;
+        gap: 20px;
       }
       h2 {
         font-size: 30px;
@@ -40,6 +49,8 @@
         width: 50px;
       }
       .buttons {
+        position: relative;
+        z-index: 10;
         button {
           padding: 20px;
           border: 1px solid white;
@@ -60,7 +71,7 @@
     right: 0;
     pointer-events: none;
     @include mobile {
-      height: 50%;
+      height: 60%;
       width: 100%;
       top: unset;
       bottom: 0;

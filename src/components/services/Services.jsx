@@ -1,6 +1,10 @@
-import { useRef } from "react";
-import "./services.scss";
+import { useRef, useState } from "react";
+
 import { motion, useInView } from "framer-motion";
+
+import ServicesModal from "../modals/ServicesModal";
+
+import "./services.scss";
 
 const variants = {
   initial: {
@@ -21,8 +25,45 @@ const variants = {
 
 const Services = () => {
   const ref = useRef();
-
   const isInView = useInView(ref, { margin: "-100px" });
+  const servicesData = [
+    {
+      title: "Front-End Development",
+      description:
+        "I create modern, functional web interfaces using technologies such as React and TypeScript. I prioritize efficiency and high performance in all web applications.",
+    },
+    {
+      title: "Optimization and Styling",
+      description:
+        "I utilize SASS/SCSS, Bootstrap, and other CSS frameworks for adaptive styling. This ensures consistent functionality across different devices and browsers.",
+    },
+    {
+      title: "Technical Collaboration",
+      description:
+        "I work effectively in Agile and Scrum teams, using GitHub for collaboration and version control. This promotes organization and transparency in projects.",
+    },
+    {
+      title: "Problem-Solving Skills",
+      description:
+        "I address technical tasks, including task estimation, database management, and bug fixing, to achieve defined business objectives efficiently.",
+    },
+  ];
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState(null);
+
+  const isMobile = window.innerWidth <= 738;
+
+  const openModal = (service) => {
+    if (isMobile) {
+      setSelectedService(service);
+      setModalIsOpen(true);
+    }
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+    setSelectedService(null);
+  };
 
   return (
     <motion.div
@@ -58,55 +99,31 @@ const Services = () => {
         </div>
       </motion.div>
       <motion.div className="listContainer" variants={variants}>
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-        >
-          <h2>Front-End Development</h2>
-          <p>
-            I create modern, functional web interfaces using technologies such
-            as React and TypeScript. I prioritize efficiency and high
-            performance in all web applications.
-          </p>
-          <button>Go</button>
-        </motion.div>
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-        >
-          <h2>Optimization and Styling</h2>
-          <p>
-            I utilize SASS/SCSS, Bootstrap, and other CSS frameworks for
-            adaptive styling. This ensures consistent functionality across
-            different devices and browsers
-          </p>
-          <button>Go</button>
-        </motion.div>
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-        >
-          <h2>Technical Collaboration</h2>
-          <p>
-            I work effectively in Agile and Scrum teams, using GitHub for
-            collaboration and version control. This promotes organization and
-            transparency in projects.
-          </p>
-          <button>Go</button>
-        </motion.div>
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-        >
-          <h2>Problem-Solving Skills</h2>
-          <p>
-            I address technical tasks, including task estimation, database
-            management, and bug fixing, to achieve defined business objectives
-            efficiently.
-          </p>
-          <button>Go</button>
-        </motion.div>
+        {servicesData.map((service, index) => (
+          <motion.div
+            key={index}
+            className="box"
+            whileHover={
+              !isMobile ? { background: "lightgray", color: "black" } : {}
+            }
+          >
+            <h2>{service.title}</h2>
+            <p>
+              {isMobile
+                ? `${service.description.split(" ").slice(0, 10).join(" ")}...`
+                : service.description}
+            </p>
+            {isMobile ? (
+              <button onClick={() => openModal(service)}>Show more</button>
+            ) : null}
+          </motion.div>
+        ))}
       </motion.div>
+      <ServicesModal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        service={selectedService}
+      />
     </motion.div>
   );
 };

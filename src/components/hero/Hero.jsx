@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import "./hero.scss";
 
 const textVariants = {
-  initial: { x: -500, opaciti: 0 },
+  initial: { x: -500, opacity: 0 },
   animate: {
     x: 0,
-    opaciti: 1,
+    opacity: 1,
     transition: { duration: 1, staggerChildren: 0.1 },
   },
   scrollButton: {
@@ -25,6 +25,12 @@ const sliderVariants = {
 };
 
 const Hero = () => {
+  const handleContactClick = () => {
+    const contactSection = document.getElementById("Contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <div className="hero">
       <div className="wrapper">
@@ -40,7 +46,9 @@ const Hero = () => {
             <motion.button variants={textVariants}>
               See the Latest Works
             </motion.button>
-            <motion.button variants={textVariants}>Contact Me</motion.button>
+            <motion.button onClick={handleContactClick} variants={textVariants}>
+              Contact Me
+            </motion.button>
           </motion.div>
           <motion.img
             variants={textVariants}

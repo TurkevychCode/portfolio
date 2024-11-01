@@ -15,7 +15,7 @@ const items = [
     id: 2,
     title: "Pizza Shop",
     img: "./pizzashop.png",
-    desc: "A dynamic online pizza shop built with React and TypeScript. This project features a robust search input, allowing users to find pizzas by name easily. The interface displays up to four pizzas per page with seamless navigation for enhanced user experience. To improve loading times, I implemented a pizza skeleton loader that maintains page layout during data fetching. Users can sort pizzas by price, popularity, or alphabetically. Additionally, if a user attempts to access the cart without adding pizzas, a friendly reminder prompts them to explore the menu. The cart functionality also allows users to adjust the quantity of selected pizzas effortlessly. Technologies used: React, TypeScript, JavaScript, SASS, Redux Toolkit, Axios, Redux-Thunk, React Router, Redux Persist, React Icons, and React Paginate.",
+    desc: "An online pizza shop built with React and TypeScript, featuring a search bar for finding pizzas by name and a skeleton loader for smoother loading. Users can sort pizzas by price, popularity, or alphabetically and navigate pages with ease. The cart functionality includes quantity adjustments and a prompt to explore the menu if empty. Technologies used: React, TypeScript, SASS, Redux Toolkit, and Axios.",
     url: "https://github.com/TurkevychCode/shop",
   },
 
