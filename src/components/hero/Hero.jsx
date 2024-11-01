@@ -31,6 +31,12 @@ const Hero = () => {
       contactSection.scrollIntoView({ behavior: "smooth" });
     }
   };
+  const handleLatestWorksClick = () => {
+    const contactSection = document.getElementById("Portfolio");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <div className="hero">
       <div className="wrapper">
@@ -43,7 +49,10 @@ const Hero = () => {
           <motion.h2 variants={textVariants}>Vitalii Turkevych</motion.h2>
           <motion.h1 variants={textVariants}>Web developer</motion.h1>
           <motion.div variants={textVariants} className="buttons">
-            <motion.button variants={textVariants}>
+            <motion.button
+              onClick={handleLatestWorksClick}
+              variants={textVariants}
+            >
               See the Latest Works
             </motion.button>
             <motion.button onClick={handleContactClick} variants={textVariants}>
