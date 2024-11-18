@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const Links = ({ onCloseSidebar }) => {
-  const items = ["Home page", "Services", "Portfolio", "Contact", "About"];
+  const items = ["Home page", "Services", "Portfolio", "About", "Contact"];
   const variants = {
     open: { transition: { staggerChildren: 0.1 } },
     closed: { transition: { staggeredChildren: 0.05, staggeredDirection: -1 } },
